@@ -1,8 +1,7 @@
 <template>
-  <div class="home">
+  <div class="trips">
     <div class="wrapper">
-      <h2>Map</h2>
-      <MapLeaflet v-if="loaded" :tripsList="trips" />
+      <!-- <AddTrip v-if="showbox" /> -->
       <h2>Trips</h2>
       <TripsTable v-if="loaded" :tripsList="trips" />
     </div>
@@ -10,14 +9,12 @@
 </template>
 
 <script>
-import MapLeaflet from "../components/MapLeaflet.vue";
 import TripsTable from "../components/TripsTable.vue";
+// import Trips from "../assets/trips.json";
 
 export default {
-  name: "HomeView",
-
+  name: "TripsView",
   components: {
-    MapLeaflet,
     TripsTable,
   },
   data() {
@@ -26,7 +23,6 @@ export default {
       loaded: false,
     };
   },
-
   methods: {
     async getTripsFile() {
       const response = await fetch("http://localhost:3000/trips", {

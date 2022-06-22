@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <body>
+      <header class="top-bar spread">
+        <nav class="top-bar-nav">
+          <router-link to="/" class="top-bar-link">Home</router-link> |
+          <router-link to="/trips" class="top-bar-link">Trips</router-link>
+          <button @click="toggleBox" class="button-add-trip">
+            <span>Search Trip</span>
+          </button>
+          <button @click="toggleBox" class="button-add-trip">
+            <span>Add Trip</span>
+          </button>
+        </nav>
+        <router-link to="/trips" class="top-bar-login-link">Login</router-link>
+      </header>
+      <router-view />
+      <AddTrip v-if="showbox" />
+    </body>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import trips from "./assets/trips.json";
+import AddTrip from "./components/AddTrip.vue";
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: "App",
+  components: {
+    AddTrip,
+  },
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  data() {
+    return {
+      trips: trips,
+      showbox: false,
+    };
+  },
+  methods: {
+    toggleBox() {
+      this.showbox = !this.showbox;
+    },
+  },
+};
+</script>
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style></style>

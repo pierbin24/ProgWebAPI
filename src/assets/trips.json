@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "data": "22/05/22",
+    "mezzo": "Treno",
+    "coordinate": ["Oderzo", "Milano"],
+    "tappe": "-"
+  },
+  {
+    "id": 2,
+    "data": "23/05/22",
+    "mezzo": "Bus",
+    "coordinate": ["Piazza Unità", "Piazzale Europa"],
+    "tappe": "Viale XX Settembre"
+  },
+  {
+    "id": 3,
+    "data": "24/05/22",
+    "mezzo": "Treno",
+    "coordinate": ["Casa Milan", "Duomo Milano"],
+    "tappe": "-"
+  },
+  {
+    "id": 4,
+    "data": "25/05/22",
+    "mezzo": "Bici",
+    "coordinate": ["Milano", "Bergamo"],
+    "tappe": "Brescia"
+  },
+  {
+    "id": 5,
+    "data": "26/05/22",
+    "mezzo": "Tram",
+    "coordinate": ["Oderzo", "Trieste"],
+    "tappe": "Monfalcone"
+  }
+]
